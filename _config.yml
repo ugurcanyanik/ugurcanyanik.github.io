@@ -30,7 +30,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Uğurcan Yanık Blog
+title: Hoşgeldiniz!
 subtitle: Uğurcan Yanık
 description: >- # this means to ignore newlines until "baseurl:"
 
@@ -44,10 +44,10 @@ url: "http://ugurcanyanik.xyz" # the base hostname & protocol for your site
 
 # Social settings
 # Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
-twitter_url: twitter.com/uurcanyanik
+twitter_url: https:www.twitter.com/uurcanyanik
 facebook_url:
 googleplus_url:
-instagram_url: instagram.com/uurcaan
+instagram_url: https:www.instagram.com/uurcaan
 linkedin_url:
 github_url: https://github.com/ugurcanyanik/
 pinterest_url:
