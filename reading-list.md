@@ -1,6 +1,6 @@
 ---
-title: Reading List
-subtitle: a list of books I read
+title: Okunması Gereken Yazılar
+subtitle: Okunmasını önerdiğim makaleler
 layout: "page"
 icon: fa-book
 order: 3
