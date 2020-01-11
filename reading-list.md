@@ -1,6 +1,6 @@
 ---
 title: Okunması Gereken Yazılar
-subtitle: Okunmasını önerdiğim makaleler
+subtitle: Okunmasını önerdiğim makaleler ve yazılar
 layout: "page"
 icon: fa-book
 order: 3
