@@ -1,14 +1,164 @@
 ---
-title: First Post
-author: Chris
+title: Socket.io nedir?
+author: Uğurcan Yanık
 layout: post
+date:   2012-01-26
 ---
-Lorem ipsum dolor sit amet, iusto ridens dictas te sed. Error latine vis et. Ex cum munere definitiones, ne quas debitis contentiones cum, epicurei constituam ea sit. Dicant aeterno dolorum ex eum, qui everti iisque consectetuer ea! Duo in falli similique, nec tritani accusam te. Enim sapientem intellegat te pri, nam at atqui accumsan vituperata.
+İlk yazım olması sebebi ile biraz heyecanlıyım aslında. Hem boş zamanımı değerlendirdiğimi düşünüyorum hem de bu sıkıcı tatil gününmü de dolu geçirmek için uğraşmak hoşuma gidiyor aslında. Bugün Socket.io hakkında biraz konuşmak istiyorum. Yapabileceğimiz bir sürü projenin olduğu ve çalışma stilini de çok sevdiğim bir kütüphanedir. Aslında Socket.io ile tanışmam bir arkadaşım sayesinde oldu. Onun websitesini de kaynakçama ekleyeceğim. İncelemenizi kesinlikle öneririm.
 
-Sed id graeci feugiat. No meis summo consequat vel! Albucius phaedrum omittantur eos an, ex sit lorem possim perpetua. Usu et sumo posidonium, ut qui dicat sapientem tincidunt, et has consul oporteat torquatos! In qui fabulas facilisis, justo nonumes an his, quo vidisse nusquam facilisis no. Eam iriure mediocrem suavitate an?
+Haydi başlayalım artık 😛, nedir bu Socket.io?
 
-Quo te solum malorum prompta, porro oblique senserit cum et! Pro wisi cetero periculis ei, nam ullum dicit accusam ne, ad quo apeirian principes dissentiunt. An mea mucius vocent iisque? Vel eu altera consetetur, clita perfecto mea ad. Eos in vero ullum regione, ei veniam disputando pro, nam et iuvaret detracto voluptua.
+## Bu Socket.io nedir? Ne işe yarar?
+Socket.io bir tarayıcı sayfası ile arka planda çalışan sunucunuzun arasında olan ve sürekli bir döngüde olan; çift taraflı ve bir olay tabanlı kütüphanedir. Yani bir **HTML** sayfası ile sunucuyu, örneğin **JS** sayfası düşünelim. Tarayıcı sayfamızdaki olan olaylarda anlık olarak arka planda bir işlem yaptırmak ya da bu sayfayı kullanan tüm kullanıcılarla iletişime geçmek isteyebiliriz. Bu gibi durumda çok basit bir işlem ile anlık olarak arka plan ile haberleşmemizi sağlayan bir yapı karşımıza çıkıyor. **Socket.io** sunucu ile bize bir çift yönlü köprü sağlıyor. Tabiki bu köprü bazen kopabiliyor. Ama başta da dediğim gibi bu bir döngü ve sürekli yeniden bağlanmaya çalışacaktır. Bu sebeple de gerçek zamanlı diye adlandırıyoruz.
 
-Ad tritani deleniti sit, ne per ubique habemus singulis. Pro at integre alienum mediocritatem, mea ad libris adipisci necessitatibus, nostro constituam sit te. Recusabo oportere et mea, case minimum deleniti no quo, deseruisse conclusionemque vis te. Nam ex iudicabit constituam accommodare, dicam singulis ex eos! Eu mea viderer ceteros repudiandae, id erat voluptatum mea, ut consul omittam convenire quo. Id justo ipsum mei, modus contentiones per et! At mel omnium lucilius instructior, vel quando graeco in, eos docendi periculis eloquentiam ut.
+<p align="center">
+	<img alt="responsive-gif" src="https://miro.medium.com/max/812/1*7xzCJROjOV6AiaSKTmmlBg.jpeg" width="650">
+</p>
 
-Eam habemus aliquando ut. Id idque virtute antiopam duo, et idque falli incorrupte eos, in sea omnium instructior. Mei ex nostrud moderatius cotidieque, cu sea partiendo euripidis, eam no tollit doming! Has ne facilisi vulputate, aliquando disputationi mel eu. Ex pri diceret delectus intellegam, regione definiebas pro ex.
+## Ad Alanları yani NameSpaces nedir? Oda kavramı ne işe yarar?
+Ad alanları aslında dünya üzerindeki mahalleler gibi düşünülebilir. Her mahallenin kendi adı olmalıdır. Bu alan adları içerisinde ise özel odalar olabilir. Yani apartmanlar. Bu apartmanların da kendi ismi olabilir ve bu apartman sakinlerine özel mesajlar yollanabilir. Bu odaya yani apartmana katılmak ve ayrılmak isteyebilirsiniz. Bu kanal size, özel bir mesaj ya da istek yollamanıza olanak sağlar. Tabiki bu odada yer alıyorsunuz diye tek bir apartmana bağlı kalmanıza gerek yok. Diğer apartmanlara yani dış dünyaya da mesaj yollayabilirsiniz. Hemen bakalım nasıl oluyor bu **Socket.io** işlemleri;
+
+**Varsayılan ad alanları** ise **/** ile otomatik olarak karşılıklı default bir bağlantı sağlandığını gösterir.
+
+```javascript
+// her iki kod parçası da bağlı olan tüm socketlere mesajı yollar `/`
+io.sockets.emit('hi', 'everyone'); //emit ile mesaj yollama işlemi yapılır
+io.emit('hi', 'everyone'); // kısaltılmış hali ile mesaj yollama işlemi yapılır
+```
+
+Burada ise her bağlantıda **socket** parametreli bir olayı yayımlar.
+
+```javascript
+io.on('connection', function(socket){ //io.on parçacığı yakalanacak yerdir. yani emit ile gelecek veriyi yakalar.
+  socket.on('disconnect', function(){ });
+});
+```
+
+**Özel ad alanları** ise **of** kullanılarak yapılır ve özel bir isim kullanılarak bağlantı yapmamızı sağlar.
+
+```javascript
+const nsp = io.of('/my-namespace');
+nsp.on('connection', function(socket){
+  console.log('someone connected');
+});
+nsp.emit('hi', 'everyone!');
+```
+
+##Oda kavramı
+Oda kavramı ise her ad alanları içerisinde tanımlayabileceğiniz özel bir alandır. Bu alana giriş çıkış yapılabilir.
+
+**Odaya katılmak ve ayrılmak**
+ **Join** yapısı ile odaya giriş yapabilirsiniz.
+
+ ```javascript
+ io.on('connection', function(socket){
+  socket.join('some room');
+});
+ ```
+ **to ya da in** yapısı kullanarak da yayın yapabilirsiniz.
+ ```javascript
+ io.to('some room').emit('some event');
+ ```
+
+ Bir kanaldan **ayrılmak yani leave** yapısını kullanmak **join** ile benzerdir. Her iki yöntem de asenkrondur ve **callback** kabul eder.
+
+ **Varsayılan oda** ise Socket.io tarafından atanan ve tahmin edilemeyen yani benzersiz bir Socket kimliği atar. Kolaylık sağlanması için de her socket otomatik olarak bu kimlikle tanımlı odaya dahil edilir.
+ ```javascript
+ io.on('connection', function(socket){
+   socket.on('say to someone', function(id, msg){
+     socket.broadcast.to(id).emit('my message', msg);
+   });
+ });
+ ```
+ **Bağlantıyı koparmak** ise socketler bütün bağlantıları vs kendisi otomatik bırakır ve size yalnızca çıkmak kalır.
+
+##Socket.io Yükleyelim
+Bu kütüphaneyi kurmak aslında çok basittir.
+```ruby
+npm install express
+npm install socket.io
+```
+konsolda bu npm satırları ile kurulum yapabilirsiniz.
+
+## Node http server ile kullanımı
+**Server (app.js)**
+```javascript
+var app = require('http').createServer(handler)
+var io = require('socket.io')(app);
+var fs = require('fs');
+
+app.listen(80);
+
+function handler (req, res) {
+  fs.readFile(__dirname + '/index.html',
+  function (err, data) {
+    if (err) {
+      res.writeHead(500);
+      return res.end('Error loading index.html');
+    }
+
+    res.writeHead(200);
+    res.end(data);
+  });
+}
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+```
+**İstemci (index.html)**
+```html
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+```
+
+## Express ile kullanımı
+Zaten express kurulumu da yaptık yukarıda ve örnek bir sayfa da aşağıdaki gibidir.
+**Server (app.js)**
+```javascript
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+server.listen(80);
+// WARNING: app.listen(80) will NOT work here!
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+```
+**İstemci (index.html)**
+```html
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+```
+-- --
+Umuyorumki anlaşılabilir ve güzel bir anlatım olmuştur. Türkçe çok kaynak olmamasına karşın kendimce bir şeyler anlatmaya ve birilerine faydalı olmaya çalıştım. Faydalı olduğuna inanıyorsanız ya da değiştirmemi istediğiniz bir yer varsa lütfen bana ulaşın. Hepinize iyi çalışmalar diliyorum.
+
+## Basit bir mesajlaşma uygulaması için ***[Tıklayınız](https://socket.io/get-started/chat/)***.
+-- -- -- -- --
+**> Kaynakça**
+
+- ***[Socket.io](https://socket.io/)***
