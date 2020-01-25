@@ -12,7 +12,7 @@ Haydi başlayalım artık 😛, nedir bu Socket.io?
 Socket.io bir tarayıcı sayfası ile arka planda çalışan sunucunuzun arasında olan ve sürekli bir döngüde olan; çift taraflı ve bir olay tabanlı kütüphanedir. Yani bir **HTML** sayfası ile sunucuyu, örneğin **JS** sayfası düşünelim. Tarayıcı sayfamızdaki olan olaylarda anlık olarak arka planda bir işlem yaptırmak ya da bu sayfayı kullanan tüm kullanıcılarla iletişime geçmek isteyebiliriz. Bu gibi durumda çok basit bir işlem ile anlık olarak arka plan ile haberleşmemizi sağlayan bir yapı karşımıza çıkıyor. **Socket.io** sunucu ile bize bir çift yönlü köprü sağlıyor. Tabiki bu köprü bazen kopabiliyor. Ama başta da dediğim gibi bu bir döngü ve sürekli yeniden bağlanmaya çalışacaktır. Bu sebeple de gerçek zamanlı diye adlandırıyoruz.
 
 <p align="center">
-	<img alt="responsive-gif" src="https://miro.medium.com/max/812/1*7xzCJROjOV6AiaSKTmmlBg.jpeg" width="650">
+	<img style="max-width: 100%; height: auto;"  alt="responsive-gif" src="https://miro.medium.com/max/812/1*7xzCJROjOV6AiaSKTmmlBg.jpeg" width="650">
 </p>
 
 ## Ad Alanları yani NameSpaces nedir? Oda kavramı ne işe yarar?
@@ -162,3 +162,4 @@ Umuyorumki anlaşılabilir ve güzel bir anlatım olmuştur. Türkçe çok kayna
 **> Kaynakça**
 
 - ***[Socket.io](https://socket.io/)***
+- ***[Çağatay Çalı](https://cagatay.me/node-js-ile-anl%C4%B1k-mesajla%C5%9Fma-uygulamas%C4%B1-yap%C4%B1m%C4%B1-5-c9d3e910a96f)***
