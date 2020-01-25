@@ -2,7 +2,7 @@
 title: Socket.io nedir?
 author: Uğurcan Yanık
 layout: post
-date:   2012-01-26
+date:   2020-01-26
 ---
 İlk yazım olması sebebi ile biraz heyecanlıyım aslında. Hem boş zamanımı değerlendirdiğimi düşünüyorum hem de bu sıkıcı tatil gününmü de dolu geçirmek için uğraşmak hoşuma gidiyor aslında. Bugün Socket.io hakkında biraz konuşmak istiyorum. Yapabileceğimiz bir sürü projenin olduğu ve çalışma stilini de çok sevdiğim bir kütüphanedir. Aslında Socket.io ile tanışmam bir arkadaşım sayesinde oldu. Onun websitesini de kaynakçama ekleyeceğim. İncelemenizi kesinlikle öneririm.
 
