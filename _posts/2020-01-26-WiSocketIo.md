@@ -3,6 +3,8 @@ title: Socket.io nedir?
 author: Uğurcan Yanık
 layout: post
 date:   2020-01-26
+tags: [Socket.io]
+image: "socket.jpg"
 ---
 İlk yazım olması sebebi ile biraz heyecanlıyım aslında. Hem boş zamanımı değerlendirdiğimi düşünüyorum hem de bu sıkıcı tatil gününmü de dolu geçirmek için uğraşmak hoşuma gidiyor aslında. Bugün Socket.io hakkında biraz konuşmak istiyorum. Yapabileceğimiz bir sürü projenin olduğu ve çalışma stilini de çok sevdiğim bir kütüphanedir. Aslında Socket.io ile tanışmam bir arkadaşım sayesinde oldu. Onun websitesini de kaynakçama ekleyeceğim. İncelemenizi kesinlikle öneririm.
 
@@ -20,11 +22,7 @@ Ad alanları aslında dünya üzerindeki mahalleler gibi düşünülebilir. Her 
 
 **Varsayılan ad alanları** ise **/** ile otomatik olarak karşılıklı default bir bağlantı sağlandığını gösterir.
 
-```javascript
-// her iki kod parçası da bağlı olan tüm socketlere mesajı yollar `/`
-io.sockets.emit('hi', 'everyone'); //emit ile mesaj yollama işlemi yapılır
-io.emit('hi', 'everyone'); // kısaltılmış hali ile mesaj yollama işlemi yapılır
-```
+<script src="https://gist.github.com/ugurcanyanik/ef5e4b6e30ac28781f3e9ba996a273d7.js"></script>
 
 Burada ise her bağlantıda **socket** parametreli bir olayı yayımlar.
 
