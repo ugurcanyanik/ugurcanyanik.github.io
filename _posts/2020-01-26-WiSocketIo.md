@@ -44,7 +44,7 @@ nsp.on('connection', function(socket){
 nsp.emit('hi', 'everyone!');
 ```
 
-##Oda kavramı
+## Oda kavramı
 Oda kavramı ise her ad alanları içerisinde tanımlayabileceğiniz özel bir alandır. Bu alana giriş çıkış yapılabilir.
 
 **Odaya katılmak ve ayrılmak**
@@ -72,7 +72,7 @@ Oda kavramı ise her ad alanları içerisinde tanımlayabileceğiniz özel bir a
  ```
  **Bağlantıyı koparmak** ise socketler bütün bağlantıları vs kendisi otomatik bırakır ve size yalnızca çıkmak kalır.
 
-##Socket.io Yükleyelim
+## Socket.io Yükleyelim
 Bu kütüphaneyi kurmak aslında çok basittir.
 ```ruby
 npm install express
