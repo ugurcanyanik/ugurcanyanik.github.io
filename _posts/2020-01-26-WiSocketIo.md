@@ -161,3 +161,13 @@ Umuyorumki anlaşılabilir ve güzel bir anlatım olmuştur. Türkçe çok kayna
 
 - ***[Socket.io](https://socket.io/)***
 - ***[Çağatay Çalı](https://cagatay.me/node-js-ile-anl%C4%B1k-mesajla%C5%9Fma-uygulamas%C4%B1-yap%C4%B1m%C4%B1-5-c9d3e910a96f)***
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-size="large" data-count="none"></a>
+<script>!function (d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) {
+js = d.createElement(s); js.id = id;
+js.src = "//platform.twitter.com/widgets.js";
+ fjs.parentNode.insertBefore(js, fjs);
+}
+}(document, "script", "twitter-wjs");
+</script>
