@@ -26,21 +26,11 @@ Ad alanları aslında dünya üzerindeki mahalleler gibi düşünülebilir. Her 
 
 Burada ise her bağlantıda **socket** parametreli bir olayı yayımlar.
 
-```javascript
-io.on('connection', function(socket){ //io.on parçacığı yakalanacak yerdir. yani emit ile gelecek veriyi yakalar.
-  socket.on('disconnect', function(){ });
-});
-```
+<script src="https://gist.github.com/ugurcanyanik/25cb7400a0ee2f2a378d2ad230bb8f67.js"></script>
 
 **Özel ad alanları** ise **of** kullanılarak yapılır ve özel bir isim kullanılarak bağlantı yapmamızı sağlar.
 
-```javascript
-const nsp = io.of('/my-namespace');
-nsp.on('connection', function(socket){
-  console.log('someone connected');
-});
-nsp.emit('hi', 'everyone!');
-```
+<script src="https://gist.github.com/ugurcanyanik/fac6137af1b6da6bae03201f8947e169.js"></script>
 
 ## Oda kavramı
 Oda kavramı ise her ad alanları içerisinde tanımlayabileceğiniz özel bir alandır. Bu alana giriş çıkış yapılabilir.
@@ -48,110 +38,39 @@ Oda kavramı ise her ad alanları içerisinde tanımlayabileceğiniz özel bir a
 **Odaya katılmak ve ayrılmak**
  **Join** yapısı ile odaya giriş yapabilirsiniz.
 
- ```javascript
- io.on('connection', function(socket){
-  socket.join('some room');
-});
- ```
+<script src="https://gist.github.com/ugurcanyanik/849a24ba870385feffb49a450dc933d6.js"></script>
  **to ya da in** yapısı kullanarak da yayın yapabilirsiniz.
- ```javascript
- io.to('some room').emit('some event');
- ```
+<script src="https://gist.github.com/ugurcanyanik/bca1c02711df688129cf54ae59207a27.js"></script>
 
  Bir kanaldan **ayrılmak yani leave** yapısını kullanmak **join** ile benzerdir. Her iki yöntem de asenkrondur ve **callback** kabul eder.
 
  **Varsayılan oda** ise Socket.io tarafından atanan ve tahmin edilemeyen yani benzersiz bir Socket kimliği atar. Kolaylık sağlanması için de her socket otomatik olarak bu kimlikle tanımlı odaya dahil edilir.
- ```javascript
- io.on('connection', function(socket){
-   socket.on('say to someone', function(id, msg){
-     socket.broadcast.to(id).emit('my message', msg);
-   });
- });
- ```
+<script src="https://gist.github.com/ugurcanyanik/0d861ac1281a7635e9d7addb27b860c2.js"></script>
+
  **Bağlantıyı koparmak** ise socketler bütün bağlantıları vs kendisi otomatik bırakır ve size yalnızca çıkmak kalır.
 
 ## Socket.io Yükleyelim
 Bu kütüphaneyi kurmak aslında çok basittir.
-```ruby
-npm install express
-npm install socket.io
-```
+
+<script src="https://gist.github.com/ugurcanyanik/7a9bd4292506b0d855a8c9eeca93b336.js"></script>
+
 konsolda bu npm satırları ile kurulum yapabilirsiniz.
 
 ## Node http server ile kullanımı
 **Server (app.js)**
-```javascript
-var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
-var fs = require('fs');
 
-app.listen(80);
+<script src="https://gist.github.com/ugurcanyanik/a08bb1cf79486b4e5d621b5ab5692a31.js"></script>
 
-function handler (req, res) {
-  fs.readFile(__dirname + '/index.html',
-  function (err, data) {
-    if (err) {
-      res.writeHead(500);
-      return res.end('Error loading index.html');
-    }
-
-    res.writeHead(200);
-    res.end(data);
-  });
-}
-
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
-```
 **İstemci (index.html)**
-```html
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  var socket = io('http://localhost');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
-</script>
-```
+
+<script src="https://gist.github.com/ugurcanyanik/b3c3d99191919151192d6e328b5c11ef.js"></script>
 
 ## Express ile kullanımı
 Zaten express kurulumu da yaptık yukarıda ve örnek bir sayfa da aşağıdaki gibidir.
 **Server (app.js)**
-```javascript
-var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-
-server.listen(80);
-// WARNING: app.listen(80) will NOT work here!
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
-```
+<script src="https://gist.github.com/ugurcanyanik/716bec7e36b471a63ee3b65cfdd13ef6.js"></script>
 **İstemci (index.html)**
-```html
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  var socket = io('http://localhost');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
-</script>
-```
+<script src="https://gist.github.com/ugurcanyanik/a878d2f12db98728d19b215760bcc88f.js"></script>
 -- --
 Umuyorumki anlaşılabilir ve güzel bir anlatım olmuştur. Türkçe çok kaynak olmamasına karşın kendimce bir şeyler anlatmaya ve birilerine faydalı olmaya çalıştım. Faydalı olduğuna inanıyorsanız ya da değiştirmemi istediğiniz bir yer varsa lütfen bana ulaşın. Hepinize iyi çalışmalar diliyorum.
 
