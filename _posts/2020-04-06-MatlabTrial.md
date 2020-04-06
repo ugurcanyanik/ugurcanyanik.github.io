@@ -10,7 +10,7 @@ image: "matlab.gif"
 Öğrenciler için fiyatı tam 55 dolar.🤨
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab1.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab1.png" width="650">
 </p>
 
 Kimi üniversiteler lisans veriyor ama benim okuduğum Pamukkale Üniversitesi bu lisansı vermiyor. Bu yüzden de Matlabın bir aylık deneme sürümünü kullanmaya başladım. Sonrasında lisans tarihim dolunca da tekrardan almayı keşfettim ve sizinle de paylaşmak istedim.
@@ -22,49 +22,49 @@ Buraya giriş yapalım.
 Mail adresinizi yazın ve devam edin.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab2.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab2.png" width="650">
 </p>
 
 Burayı da doldurun ve öğrenci seçmeyi unutmayın. “Create”butonuna bastıktan sonra size mail adresinizin bir iş ya da üniversite adresi olduğunu seçmek için **“Continue with Current Email”** butonuna tıklayınız.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab3.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab3.png" width="650">
 </p>
 
 Matlab programına üye olmak için kullandığınız mailinize giriş yapın ve gelen maili onaylayın.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab4.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab4.png" width="650">
 </p>
 
 Buradan sonra profil bilgileri girilerek devam edilmesi lazım ama şöyle bir durum var Türkçe karakter kabul etmiyor; isim soy isme de Türkçe karakter girmeyin. Her şeyi doldurup devam edin.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab5.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab5.png" width="650">
 </p>
 
 **“Submit”** butonuna bastıktan sonra karşınıza Matlab türünü seçmeniz için bir panel çıkacak.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab6.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab6.png" width="650">
 </p>
 
 Burada **“Matlab Essentials”** butonuna tıklayın.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab7.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab7.png" width="650">
 </p>
 
 Burayı da onayladıktan sonra. Artık Matlab indirmek için hazırsınız. Eğer kurulu Matlab programınız varsa ve lisans eklemek istiyorsanız bir sonraki resimden devam edin.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab8.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab8.png" width="650">
 </p>
 
 İşletim sisteminize uygun olan seçeneğe tıklayın ve programı kurmaya başlayın. Matlab çok büyük bir program olduğu için internet hızınıza bağlı olarak kurulum süresi değişecektir.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab9.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab9.png" width="650">
 </p>
 
 İndirmeyi yapıp program açıldıktan sonra mail adresi ve şifre girerek kullanmaya başlayabilirsiniz. İşte bu kadar. Artık Matlab programını kullanabilirsiniz. 🤩🎉
@@ -76,13 +76,13 @@ Bir diğer konu ise daha önce bir aylık sürümü kullanıp yeniden bir aylık
 Aşağıdaki resimde yukarıdaki **“Account”** simgenize tıkladıktan sonra **“My Account”** seçeneğine tıklayın daha sonrasında **“license”** seçeneğine tıklayın.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab10.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab10.png" width="650">
 </p>
 
 **License** seçeneğinden sonra da;
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab11.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab11.png" width="650">
 </p>
 
 Burada **“İnstall and Activate”** seçeneğine ve sonrasında da sağda duran **“Activate to Retreve License File”** seçeneğine tıklayın.
@@ -93,13 +93,13 @@ Linux kullanıcıları terminali açıp: **“ip addr | grep ether”** komutu i
 Windows kullanıcıları Windows command açıp: **“vol c:”** komutu ile bulabilirler.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"   src="Matlab12.png" width="650">
+	<img style="max-width: 100%; height: auto;"   src="assets/images/Matlab12.png" width="650">
 </p>
 
 Bu sayfayı doldurup devam ettikten sonra da;
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab13.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab13.png" width="650">
 </p>
 
 Buradaki “Download License File” butonu ile lisans dosyasını indirelim.
@@ -107,19 +107,19 @@ Buradaki “Download License File” butonu ile lisans dosyasını indirelim.
 Matlab programının kurulu olduğu dosyaya gidelim ve oradaki **“Activate”** programını açalım.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;" src="Matlab14.png" width="650">
+	<img style="max-width: 100%; height: auto;" src="assets/images/Matlab14.png" width="650">
 </p>
 
 Burada internet kullanmadan aktive etme seçeneğini tıklayalım ve gelen ekran ile devam edelim.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;" src="Matlab15.png" width="650">
+	<img style="max-width: 100%; height: auto;" src="assets/images/Matlab15.png" width="650">
 </p>
 
 İndirdiğimiz lisans dosyasını seçelim ve “Next” butonuna tıklayalım.
 
 <p align="center">
-	<img style="max-width: 100%; height: auto;"  src="Matlab16.png" width="650">
+	<img style="max-width: 100%; height: auto;"  src="assets/images/Matlab16.png" width="650">
 </p>
 
 Ve 1 aylık **Matlab** programınız hayırlı olsun. Lisans süreniz dolunca aynı işlemleri tekrarlayarak Matlab programını yeniden kullanabilirsiniz. 🤩🎉
